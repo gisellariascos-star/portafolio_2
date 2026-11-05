@@ -1,0 +1,95 @@
+/* Tipografías y estilos personalizados para el Portafolio de Gisella Riascos */
+
+@font-face {
+    font-family: 'The Spooky Night';
+    src: local('Creepster'), local('Rubik Vinyl');
+}
+
+body {
+    background-color: #1c1447;
+    color: #f4d6e0;
+    font-family: 'Sour Gummy', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .font-spooky-title {
+    font-family: 'The Spooky Night', 'Creepster', 'Rubik Vinyl', cursive, sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: none !important;
+    line-height: 1.3 !important;
+}
+
+/* Hero Title sizing */
+.hero-title-bg {
+    font-size: clamp(2.5rem, 7vw, 6.5rem);
+    line-height: 1.25;
+    word-spacing: 0.05em;
+}
+
+/* Marquee / Cinta continua */
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 18s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Revelado progresivo de texto */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tilt 3D */
+.tilt-container {
+    perspective: 1000px;
+}
+
+.tilt-card {
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
+}
+
+/* Program Icons */
+.program-icon {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.program-group:hover .program-icon:not(:hover) {
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+.program-icon:hover {
+    transform: scale(1.25) translateY(-3px) !important;
+    z-index: 10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1c1447;
+}
+::-webkit-scrollbar-thumb {
+    background: #ce94c4;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #07a886;
+}
