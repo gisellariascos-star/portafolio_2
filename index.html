@@ -3,334 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gisella Riascos | Diseñadora Gráfica - Portafolio</title>
-    
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Sour Gummy y Creepster/Rubik Vinyl para títulos Spooky -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rubik+Vinyl&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        // Configuración de la paleta personalizada de Gisella en Tailwind
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#1c1447',    // Azul violeta profundo
-                            teal: '#07a886',    // Verde azulado vibrante
-                            pink: '#f4d6e0',    // Rosa pastel suave
-                            purple: '#ce94c4',   // Malva / Púrpura suave
-                            lime: '#ccf469'      // Verde lima brillante
-                        }
-                    },
-                    fontFamily: {
-                        spooky: ['"Creepster"', '"Rubik Vinyl"', 'cursive', 'sans-serif'],
-                        sans: ['"Sour Gummy"', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <meta name="description" content="Portafolio profesional de Gisella Riascos. Proyectos de diseño gráfico, identidad visual y comunicación.">
 
-    <!-- Archivo CSS separado -->
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Gisella Riascos | Portafolio de Diseño Gráfico</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="selection:bg-brand-lime selection:text-brand-dark font-sans relative">
 
-    <!-- Top Bar Header Centrado -->
-    <header class="w-full bg-brand-dark/90 py-4 px-6 border-b border-brand-purple/20 text-center relative z-20">
-        <div class="text-xs sm:text-sm font-bold tracking-widest text-brand-pink mb-0.5">
-            Cali, Colombia
-        </div>
-        <a href="mailto:gisellariascos2@gmail.com" class="text-xs sm:text-sm font-bold text-brand-lime hover:underline transition-all">
-            gisellariascos2@gmail.com
+<body>
+
+    <!-- Enlace para saltar directamente al contenido -->
+    <a href="#contenido" class="skip-link">
+        Saltar al contenido principal
+    </a>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+
+        <a href="#inicio" class="logo" aria-label="Gisella Riascos, ir al inicio">
+            GR.
         </a>
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+            type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navigation"
+             id="menu-principal"
+             aria-label="Navegación principal">
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+        </nav>
+
     </header>
 
-    <!-- SECTION 1: HERO / HOLA, SOY GISELLA -->
-    <section class="relative min-h-[85vh] container mx-auto px-6 py-8 flex flex-col justify-center items-center text-center overflow-hidden z-10">
-        <div class="w-full relative max-w-5xl">
-            <!-- Título Principal -->
-            <h1 class="hero-title-bg font-spooky-title font-black text-brand-pink tracking-tight select-none mb-6">
-                Hola, soy Gisella
-            </h1>
 
-            <!-- Grid de 3 columnas -->
-            <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center w-full mx-auto my-4">
-                <!-- Columna Izquierda: Frase descriptiva -->
-                <div class="text-center md:text-left order-2 md:order-1 px-2">
-                    <p class="text-lg sm:text-xl font-bold text-brand-pink leading-relaxed max-w-xs mx-auto md:mx-0">
-                        Tu idea, yo la convierto en una experiencia visual.
-                    </p>
-                </div>
+    <main id="contenido">
 
-                <!-- Columna Central: Avatar PNG sin marco con efecto Tilt 3D -->
-                <div class="tilt-container flex justify-center order-1 md:order-2">
-                    <div id="tiltCard" class="tilt-card relative w-48 h-48 sm:w-60 sm:h-60 cursor-pointer flex items-center justify-center">
-                        <img 
-                            src="images/avatar.png" 
-                            alt="Gisella Riascos Ilustración" 
-                            class="w-full h-full object-contain filter drop-shadow-xl"
-                            onerror="this.onerror=null; this.src='https://i.ibb.co/vzP6x3M/avatar.png';"
-                        />
-                    </div>
-                </div>
+        <!-- INICIO -->
+        <section class="hero" id="inicio"
+                 aria-labelledby="titulo-principal">
 
-                <!-- Columna Derecha: Botón Contáctame -->
-                <div class="flex justify-center md:justify-end order-3 px-2">
-                    <a href="#contacto" class="group relative inline-flex items-center justify-center px-7 py-3 text-base sm:text-lg font-black text-brand-dark bg-brand-lime hover:bg-brand-teal hover:text-white rounded-full shadow-lg hover:shadow-brand-teal/40 transition-all duration-300 hover:scale-105 active:scale-95 tracking-wide font-sans">
-                        <span class="relative z-10 flex items-center gap-2">
-                            Contáctame
-                            <i data-lucide="arrow-down-right" class="w-5 h-5 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
+            <div class="hero-content">
 
-            <!-- Subtítulo inferior: Diseñadora gráfica -->
-            <div class="mt-8">
-                <h2 class="font-spooky-title text-2xl sm:text-3xl text-brand-purple tracking-wide font-normal">
-                    Diseñadora gráfica
+                <p class="subtitle">PORTAFOLIO CREATIVO</p>
+
+                <h1 id="titulo-principal">
+                    Hola, soy Gisella Riascos
+                </h1>
+
+                <h2>
+                    Diseñadora gráfica en formación
                 </h2>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECTION 2: CINTA CONTINUA DE PATRÓN (MARQUEE SLIDER) -->
-    <div class="w-full bg-brand-teal py-3.5 overflow-hidden border-y-2 border-brand-lime shadow-inner relative z-10">
-        <div class="animate-marquee whitespace-nowrap flex items-center gap-8 font-sans font-black text-brand-dark text-base sm:text-lg tracking-wider">
-            <span>✦ Packaging </span>
-            <span>✦ Ilustración Digital</span>
-            <span>✦ Diseño de Afiches</span>
-            <span>✦ Infografías </span>
-            <span>✦ Branding & Identidad</span>
-            <span>✦ Packaging </span>
-            <span>✦ Ilustración Digital</span>
-            <span>✦ Diseño de Afiches</span>
-            <span>✦ Infografías </span>
-            <span>✦ Branding & Identidad</span>
-        </div>
-    </div>
-
-    <!-- SECTION 3: SOBRE MÍ -->
-    <section class="py-24 px-6 container mx-auto max-w-5xl relative z-10">
-        <div class="relative bg-brand-dark/90 border-2 border-brand-purple/30 rounded-3xl p-8 sm:p-12 md:p-16 backdrop-blur-sm shadow-2xl">
-            <h2 class="text-4xl sm:text-5xl font-black text-brand-pink font-spooky-title text-center mb-8 leading-snug">
-                Sobre mí
-            </h2>
-
-            <div class="space-y-6 text-lg sm:text-xl text-brand-pink/90 leading-relaxed max-w-3xl mx-auto text-center font-medium">
-                <p class="reveal-text">
-                     
+                <p>
+                    Me apasiona transformar ideas en experiencias
+                    visuales a través del diseño, la creatividad
+                    y la comunicación gráfica.
                 </p>
-                <p class="reveal-text">
-Estudiante de diseño gráfico en la Universidad del Valle. Especializada en proyectos de branding, diseño editorial, infografías y diseño tipográfico. Mi enfoque es crear identidades visuales que cumplan con las necesidades del público, su esencia y sus respectivos valores. Motivada por siempre salir de la caja, experimentar nuevas habilidades y aprendizajes, así mismo como experimentar nuevas tendencias y aplicarlas. 
-                </p>
-            </div>
 
-            <!-- Programas Iconos Duotono Pequeños -->
-            <div class="mt-12">
-                <h3 class="text-center font-spooky-title text-xl font-bold text-brand-lime mb-6 tracking-wider">
-                    Programas
-                </h3>
-                
-                <div class="program-group flex flex-wrap justify-center items-center gap-4 sm:gap-6">
-                    <div class="program-icon flex flex-col items-center cursor-pointer">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-brand-dark border-2 border-brand-lime flex items-center justify-center shadow-md">
-                            <span class="font-black text-base sm:text-lg text-brand-lime">Ps</span>
-                        </div>
-                        <span class="mt-1.5 text-xs font-bold text-brand-pink/80">Photoshop</span>
-                    </div>
-
-                    <div class="program-icon flex flex-col items-center cursor-pointer">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-brand-dark border-2 border-brand-teal flex items-center justify-center shadow-md">
-                            <span class="font-black text-base sm:text-lg text-brand-teal">Ai</span>
-                        </div>
-                        <span class="mt-1.5 text-xs font-bold text-brand-pink/80">Illustrator</span>
-                    </div>
-
-                    <div class="program-icon flex flex-col items-center cursor-pointer">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-brand-dark border-2 border-brand-purple flex items-center justify-center shadow-md">
-                            <span class="font-black text-base sm:text-lg text-brand-purple">Id</span>
-                        </div>
-                        <span class="mt-1.5 text-xs font-bold text-brand-pink/80">InDesign</span>
-                    </div>
-
-                    <div class="program-icon flex flex-col items-center cursor-pointer">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-brand-dark border-2 border-brand-pink flex items-center justify-center shadow-md">
-                            <span class="font-black text-base sm:text-lg text-brand-pink">Fr</span>
-                        </div>
-                        <span class="mt-1.5 text-xs font-bold text-brand-pink/80">Fresco</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: TRABAJO DESTACADO -->
-    <section class="py-20 px-6 container mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl sm:text-6xl font-black text-brand-lime font-spooky-title tracking-tight leading-snug">
-                Trabajos destacados
-            </h2>
-            <p class="mt-3 text-lg text-brand-purple font-semibold">
-                Seleccione proyectos recientes y destacados.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Packaging -->
-            <div class="group relative bg-brand-purple/10 border border-brand-purple/30 rounded-3xl p-6 flex flex-col justify-between hover:border-brand-teal transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-64 rounded-2xl overflow-hidden mb-6 bg-brand-dark/80 relative">
-                    <img src="images/Recurso 3.png" alt="Packaging Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1c1447/07a886?text=Packaging';" />
-                </div>
-                <div class="text-center">
-                    <h3 class="text-2xl font-black font-spooky-title text-brand-pink mb-4">Packaging</h3>
-                    <button onclick="openModal('packaging')" class="w-full py-3 px-6 bg-brand-teal text-brand-dark font-black rounded-xl hover:bg-brand-lime transition-colors shadow-md flex items-center justify-center gap-2">
-                        <span>Ver Proyecto</span>
-                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Afiche -->
-            <div class="group relative bg-brand-purple/10 border border-brand-purple/30 rounded-3xl p-6 flex flex-col justify-between hover:border-brand-teal transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-64 rounded-2xl overflow-hidden mb-6 bg-brand-dark/80 relative">
-                    <img src="images/Recurso 6.png" alt="Diseño de Afiche" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1c1447/ce94c4?text=Afiches';" />
-                </div>
-                <div class="text-center">
-                    <h3 class="text-2xl font-black font-spooky-title text-brand-pink mb-4">Afiches</h3>
-                    <button onclick="openModal('afiche')" class="w-full py-3 px-6 bg-brand-teal text-brand-dark font-black rounded-xl hover:bg-brand-lime transition-colors shadow-md flex items-center justify-center gap-2">
-                        <span>Ver Proyecto</span>
-                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Infografía -->
-            <div class="group relative bg-brand-purple/10 border border-brand-purple/30 rounded-3xl p-6 flex flex-col justify-between hover:border-brand-teal transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-64 rounded-2xl overflow-hidden mb-6 bg-brand-dark/80 relative">
-                    <img src="images/Recurso 2.png" alt="Diseño de Infografía" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1c1447/ccf469?text=Infografía';" />
-                </div>
-                <div class="text-center">
-                    <h3 class="text-2xl font-black font-spooky-title text-brand-pink mb-4">Infografías</h3>
-                    <button onclick="openModal('infografia')" class="w-full py-3 px-6 bg-brand-teal text-brand-dark font-black rounded-xl hover:bg-brand-lime transition-colors shadow-md flex items-center justify-center gap-2">
-                        <span>Ver Proyecto</span>
-                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODAL PRINCIPAL -->
-    <div id="projectModal" class="fixed inset-0 bg-brand-dark/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
-        <div class="bg-brand-dark border-2 border-brand-purple rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full bg-brand-purple/20 text-brand-pink hover:bg-brand-lime hover:text-brand-dark transition-colors">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <h3 id="modalTitle" class="text-3xl sm:text-4xl font-black font-spooky-title text-brand-lime mb-4">Título</h3>
-            <p id="modalDescription" class="text-brand-pink/90 text-base sm:text-lg mb-8 leading-relaxed font-medium">Descripción...</p>
-            <div class="mb-4">
-                <p class="text-xs uppercase tracking-wider text-brand-teal mb-3 font-bold">
-                    <i data-lucide="zoom-in" class="inline w-4 h-4 mr-1"></i> Haz clic en la imagen para ver en pantalla completa:
-                </p>
-                <div id="modalGallery" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- LIGHTBOX -->
-    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[60] hidden flex items-center justify-center p-4" onclick="closeLightbox()">
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <img id="lightboxImg" src="" alt="Vista grande" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" />
-    </div>
-
-    <!-- SECTION 5: CONTACTO -->
-    <section id="contacto" class="py-24 px-6 container mx-auto max-w-4xl">
-        <div class="bg-gradient-to-b from-brand-purple/10 to-brand-teal/10 border-2 border-brand-teal/40 rounded-3xl p-8 sm:p-12 shadow-2xl">
-            <h2 class="text-4xl sm:text-6xl font-black font-spooky-title text-brand-pink text-center mb-3 leading-snug">
-                Pongámonos en contacto
-            </h2>
-            <p class="text-center text-brand-lime font-bold mb-10 text-lg">
-                gisellariascos2@gmail.com
-            </p>
-
-            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                <div>
-                    <label class="block text-sm font-bold text-brand-pink mb-2">Nombre completo</label>
-                    <input type="text" required placeholder="Tu nombre aquí..." class="w-full bg-brand-dark/80 border border-brand-purple/40 rounded-xl px-5 py-3 text-brand-pink placeholder-brand-pink/40 focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all font-medium" />
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold text-brand-pink mb-2">Gmail / Correo</label>
-                        <input type="email" required placeholder="ejemplo@gmail.com" class="w-full bg-brand-dark/80 border border-brand-purple/40 rounded-xl px-5 py-3 text-brand-pink placeholder-brand-pink/40 focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all font-medium" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-brand-pink mb-2">Número de contacto</label>
-                        <input type="tel" required placeholder="+57 300 000 0000" class="w-full bg-brand-dark/80 border border-brand-purple/40 rounded-xl px-5 py-3 text-brand-pink placeholder-brand-pink/40 focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all font-medium" />
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-brand-pink mb-2">Mensaje</label>
-                    <textarea rows="4" required placeholder="Cuéntame sobre tu proyecto o idea..." class="w-full bg-brand-dark/80 border border-brand-purple/40 rounded-xl px-5 py-3 text-brand-pink placeholder-brand-pink/40 focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all resize-none font-medium"></textarea>
-                </div>
-                <div class="pt-4 text-center">
-                    <button type="submit" id="submitBtn" class="w-full sm:w-auto px-12 py-4 bg-brand-lime text-brand-dark font-black text-lg rounded-full hover:bg-brand-teal hover:text-white transition-all shadow-lg active:scale-95 tracking-wide">
-                        Enviar Mensaje
-                    </button>
-                </div>
-            </form>
-            <div id="formSuccess" class="hidden mt-6 p-4 bg-brand-teal/20 border border-brand-teal text-brand-lime rounded-2xl text-center font-bold">
-                ¡Gracias por comunicarte! Tu mensaje ha sido enviado exitosamente. Gisella te responderá pronto.
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6: FOOTER -->
-    <footer class="border-t border-brand-purple/30 bg-brand-dark py-12 px-6 relative z-10">
-        <div class="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
-            <div>
-                <h3 class="text-3xl sm:text-4xl font-black font-spooky-title text-brand-pink tracking-wide">
-                    Gisella Riascos
-                </h3>
-                <p class="text-xs text-brand-purple mt-1 font-bold">
-                    Portafolio de Diseño Gráfico & Identidad
-                </p>
-            </div>
-
-            <div class="flex flex-col items-center justify-center">
-                <span class="text-xs font-black tracking-wider text-brand-purple mb-2 uppercase">Social</span>
-                <a href="https://instagram.com/gisella_r.a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-purple/10 border border-brand-purple/40 hover:border-brand-lime hover:bg-brand-purple/20 text-brand-pink hover:text-brand-lime transition-all group font-bold">
-                    <svg class="w-5 h-5 text-brand-teal group-hover:scale-110 transition-transform fill-current" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                    <span class="text-base tracking-wide">gisella_r.a</span>
+                <a href="#proyectos" class="button">
+                    Conoce mis proyectos
                 </a>
+
             </div>
 
-            <div class="md:text-right">
-                <span class="text-xs font-black tracking-wider text-brand-purple mb-2 block uppercase">Contacto</span>
-                <p class="font-bold text-brand-pink">Gisella</p>
-                <p class="text-brand-lime font-mono font-bold text-sm mt-0.5">+57 312 409 5715</p>
-            </div>
-        </div>
+            <div class="hero-image">
 
-        <div class="text-center mt-12 text-xs text-brand-purple/60 font-bold">
-            © <span id="year"></span> Gisella Riascos. Todos los derechos reservados.
-        </div>
+                <img
+                    src="imagenes/perfil.jpg"
+                    alt="Retrato de Gisella Riascos"
+                    width="450"
+                    height="550">
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE MÍ -->
+        <section class="about section"
+                 id="sobre-mi"
+                 aria-labelledby="titulo-sobre-mi">
+
+            <div class="section-title">
+
+                <p class="subtitle">CONÓCEME</p>
+
+                <h2 id="titulo-sobre-mi">
+                    Sobre mí
+                </h2>
+
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    Soy Gisella Riascos, estudiante de diseño gráfico.
+                    Me interesa la comunicación visual, la identidad
+                    gráfica, la composición y la creación de propuestas
+                    creativas que transmitan mensajes significativos.
+                </p>
+
+                <p>
+                    Mi objetivo es desarrollar soluciones visuales
+                    que combinen creatividad, funcionalidad y
+                    sensibilidad estética.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HABILIDADES -->
+        <section class="skills section"
+                 id="habilidades"
+                 aria-labelledby="titulo-habilidades">
+
+            <div class="section-title">
+
+                <p class="subtitle">LO QUE HAGO</p>
+
+                <h2 id="titulo-habilidades">
+                    Mis habilidades
+                </h2>
+
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <h3>Diseño editorial</h3>
+                    <p>
+                        Creación de composiciones, publicaciones
+                        y piezas gráficas.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Identidad visual</h3>
+                    <p>
+                        Desarrollo de conceptos visuales,
+                        marcas y sistemas gráficos.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Ilustración</h3>
+                    <p>
+                        Exploración de recursos gráficos
+                        y expresión visual.
+                    </p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Diseño digital</h3>
+                    <p>
+                        Creación de propuestas visuales
+                        para medios digitales.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROYECTOS -->
+        <section class="projects section"
+                 id="proyectos"
+                 aria-labelledby="titulo-proyectos">
+
+            <div class="section-title">
+
+                <p class="subtitle">MI TRABAJO</p>
+
+                <h2 id="titulo-proyectos">
+                    Proyectos destacados
+                </h2>
+
+                <p>
+                    Una selección de trabajos y procesos creativos.
+                </p>
+
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+
+                    <img
+                        src="imagenes/proyecto1.jpg"
+                        alt="Composición gráfica del proyecto de identidad visual"
+                        width="600"
+                        height="400"
+                        loading="lazy">
+
+                    <div class="project-info">
+
+                        <h3>Identidad visual</h3>
+
+                        <p>
+                            Desarrollo de una propuesta de identidad
+                            gráfica y comunicación visual.
+                        </p>
+
+                        <a href="proyectos/proyecto1.html"
+                           aria-label="Ver proyecto de identidad visual">
+                            Ver proyecto
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <img
+                        src="imagenes/proyecto2.jpg"
+                        alt="Diseño editorial de una publicación con composición tipográfica"
+                        width="600"
+                        height="400"
+                        loading="lazy">
+
+                    <div class="project-info">
+
+                        <h3>Diseño editorial</h3>
+
+                        <p>
+                            Exploración de tipografía,
+                            diagramación y composición.
+                        </p>
+
+                        <a href="proyectos/proyecto2.html"
+                           aria-label="Ver proyecto de diseño editorial">
+                            Ver proyecto
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <img
+                        src="imagenes/proyecto3.jpg"
+                        alt="Afiche gráfico con elementos visuales y tipografía"
+                        width="600"
+                        height="400"
+                        loading="lazy">
+
+                    <div class="project-info">
+
+                        <h3>Diseño de afiches</h3>
+
+                        <p>
+                            Comunicación de mensajes mediante
+                            recursos gráficos y visuales.
+                        </p>
+
+                        <a href="proyectos/proyecto3.html"
+                           aria-label="Ver proyecto de diseño de afiches">
+                            Ver proyecto
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section class="contact section"
+                 id="contacto"
+                 aria-labelledby="titulo-contacto">
+
+            <div class="section-title">
+
+                <p class="subtitle">HABLEMOS</p>
+
+                <h2 id="titulo-contacto">
+                    Contacto
+                </h2>
+
+                <p>
+                    Si tienes una idea o propuesta, puedes
+                    comunicarte conmigo a través de este formulario.
+                </p>
+
+            </div>
+
+
+            <form id="formulario-contacto" novalidate>
+
+                <div class="form-group">
+
+                    <label for="nombre">
+                        Nombre completo
+                        <span aria-hidden="true">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        autocomplete="name"
+                        required
+                        aria-describedby="error-nombre">
+
+                    <span class="error-message"
+                          id="error-nombre"></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="correo">
+                        Correo electrónico
+                        <span aria-hidden="true">*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        autocomplete="email"
+                        required
+                        aria-describedby="error-correo">
+
+                    <span class="error-message"
+                          id="error-correo"></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="telefono">
+                        Número de teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        autocomplete="tel"
+                        aria-describedby="error-telefono">
+
+                    <span class="error-message"
+                          id="error-telefono"></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mensaje">
+                        Mensaje
+                        <span aria-hidden="true">*</span>
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        required
+                        aria-describedby="error-mensaje"></textarea>
+
+                    <span class="error-message"
+                          id="error-mensaje"></span>
+
+                </div>
+
+
+                <button type="submit" class="button submit-button">
+                    Enviar mensaje
+                </button>
+
+                <p id="estado-formulario"
+                   class="form-status"
+                   role="status"
+                   aria-live="polite"
+                   aria-atomic="true">
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+
+        <p>
+            © 2026 Gisella Riascos.
+            Todos los derechos reservados.
+        </p>
+
+        <a href="#inicio">
+            Volver al inicio
+        </a>
+
     </footer>
 
-    <!-- Archivo JS separado -->
-    <script src="js/main.js"></script>
+
+    <script src="script.js" defer></script>
+
 </body>
 </html>
